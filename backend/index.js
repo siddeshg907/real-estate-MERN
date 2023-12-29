@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv, { config } from "dotenv";
 import authRouter from "./routes/auth.route.js";
 import userRouter from "./routes/user.route.js";
+import cookieParser from "cookie-parser";
 
 dotenv.config()
 
@@ -17,6 +18,8 @@ mongoose.connect(process.env.MongoDB).then(()=>{
 const app=express()
 
 app.use(express.json())
+
+app.use(cookieParser())
 
 app.get("/",(req,res)=>{
    res.json({"msg":"This is Home page"})
