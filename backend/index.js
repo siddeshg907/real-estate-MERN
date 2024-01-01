@@ -6,6 +6,7 @@ import userRouter from "./routes/user.route.js";
 import listingRouter from "./routes/listing.route.js";
 import cookieParser from "cookie-parser";
 
+
 dotenv.config()
 
 
@@ -15,6 +16,7 @@ mongoose.connect(process.env.MongoDB).then(()=>{
 }).catch((err)=>{
    console.log(err)
 })
+
 
 const app=express()
 
