@@ -214,7 +214,7 @@ try {
         <Link
           className="bg-green-700 text-white uppercase rounded-lg p-3 text-center hover:opacity-95"
           to={"/create-listing"}
-        ></Link>
+        >Add Property</Link>
       </form>
       <div className="flex justify-between mt-5">
         <span
