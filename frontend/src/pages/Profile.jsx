@@ -217,13 +217,13 @@ export default function Profile() {
           disabled={loading}
           className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'
         >
-          {loading ? 'Loading...' : 'Update'}
+          {loading ? 'Loading...' : 'Update Profile'}
         </button>
         <Link
           className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95'
           to={'/create-listing'}
         >
-          Create Listing
+          Upload Property
         </Link>
       </form>
       <div className='flex justify-between mt-5'>
@@ -243,7 +243,7 @@ export default function Profile() {
         {updateSuccess ? 'User is updated successfully!' : ''}
       </p>
       <button onClick={handleShowListings} className='text-green-700 w-full'>
-        Show Listings
+        Show My Property
       </button>
       <p className='text-red-700 mt-5'>
         {showListingsError ? 'Error showing listings' : ''}
@@ -252,7 +252,7 @@ export default function Profile() {
       {userListings && userListings.length > 0 && (
         <div className='flex flex-col gap-4'>
           <h1 className='text-center mt-7 text-2xl font-semibold'>
-            Your Listings
+            Your Property
           </h1>
           {userListings.map((listing) => (
             <div
