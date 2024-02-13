@@ -50,6 +50,8 @@ export default function Listing() {
     fetchListing();
   }, [params.listingId]);
 
+  
+
   return (
     <main>
       {loading && <p className='text-center my-7 text-2xl'>Loading...</p>}
@@ -61,11 +63,14 @@ export default function Listing() {
           <Swiper navigation>
             {listing.imageUrls.map((url) => (
               <SwiperSlide key={url}>
+                {console.log(url)}
                 <div
                   className='h-[550px]'
+                  
                   style={{
-                    background: `url(${url}) center no-repeat`,
+                    // background:`url(${url}) center no-repeat`,
                     backgroundSize: 'cover',
+                    backgroundImage:`url("${url}")`
                   }}
                 ></div>
               </SwiperSlide>
