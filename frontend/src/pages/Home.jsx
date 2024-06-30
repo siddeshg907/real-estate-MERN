@@ -5,6 +5,8 @@ import { Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import 'swiper/css/bundle';
 import ListingItem from '../components/ListingItem';
+import Footer from '../components/Footer';
+import house from "../assets/House.gif";
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -48,26 +50,35 @@ export default function Home() {
   return (
     <div>
       {/* top */}
-      <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
+  
+      <div className='flex flex-col lg:flex-row gap-6 p-28 px-3 max-w-6xl mx-auto'>
+      <div className='flex-1 lg:flex-[2]'>
         <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl'>
           Find your next <span className='text-slate-500'>perfect</span>
           <br />
           place with ease
         </h1>
-        <div className='text-gray-400 text-xs sm:text-sm'>
-         Real Estate is the best place to find your next perfect place to
-          live.
+        <div className='text-gray-400 text-xs sm:text-sm mt-4'>
+          Real Estate is the best place to find your next perfect place to live.
           <br />
           We have a wide range of properties for you to choose from.
         </div>
         <Link
           to={'/search'}
-          className='text-xs sm:text-sm text-blue-800 font-bold hover:underline'
+          className='text-xs sm:text-sm text-blue-800 font-bold hover:underline mt-4'
         >
           Let's get started...
         </Link>
       </div>
-
+      <div className='flex-1 lg:flex-[1] hidden lg:block'>
+        <img
+          src={house}
+          alt='Real Estate'
+          className='w-full h-full object-cover'
+        />
+      </div>
+    </div>
+  
       {/* swiper */}
       <Swiper navigation>
         {offerListings &&
@@ -129,6 +140,13 @@ export default function Home() {
           </div>
         )}
       </div>
+
+      {/* footer */}
+
+      <Footer/>
+
+
+
     </div>
   );
 }
